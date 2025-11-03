@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập CSS Nâng Cao - Thế Giới Đồ Uống</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; 
+            justify-content: center; 
+            background-color: #38761d; 
+            border-bottom: 3px solid #6aa84f;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #6aa84f;
+            transform: scale(1.1);
+        }
+
+        .skip-link {
+            position: absolute; 
+            left: -9999px; 
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: 999;
+        }
+
+        .skip-link:focus {
+            position: static; 
+            left: auto;
+            top: auto;
+            width: auto;
+            height: auto;
+            padding: 10px;
+            background-color: yellow;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; 
+            margin: 20px auto;
+            border: 5px solid #a4c6a4; 
+            padding: 10px; 
+            border-radius: 15px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #gallery img:nth-child(even) {
+            border-radius: 50%;
+        }
+
+        #home-content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .sidebar {
+            background-color: #e6e6e6;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        #gallery {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin: 40px auto 20px;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        #contact {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        #contact input[type="text"], #contact input[type="email"], #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        #contact input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        
+        #contact input[type="submit"]:hover {
+            background-color: #38761d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Chuyển đến Nội dung chính</a>
+
+    <header>
+        <h1>Bài Tập Lớn: Thế Giới Đồ Uống</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Trang Chủ</a></li>
+                <li><a href="#gallery-section">Bộ Sưu Tập (5+ ảnh)</a></li>
+                <li><a href="#contact-section">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        
+        <section id="home-section" class="section-header">
+            <h2>🏠 Trang Chủ: Giới Thiệu</h2>
+        </section>
+        
+        <div id="home-content">
+            <section class="main-article">
+                <h3 id="home">Khám Phá Hương Vị Thức Uống</h3>
+                <p>Đồ uống không chỉ là cách giải khát mà còn là một phần của văn hóa và lối sống. Từ một ly cà phê đậm đà buổi sáng đến một ly trà ấm áp buổi tối, mỗi loại thức uống đều mang lại những trải nghiệm riêng biệt.</p>
+                <img src="https://picsum.photos/id/1060/600/400" alt="Một ly cà phê nghệ thuật" title="Cà phê latte" loading="lazy">
+                <p>Tại đây, chúng tôi khám phá những loại đồ uống phổ biến nhất trên thế giới, từ cách pha chế truyền thống đến các công thức hiện đại và sáng tạo.</p>
+            </section>
+
+            <aside class="sidebar">
+                <h3>Loại Phổ Biến</h3>
+                <ul>
+                    <li>Cà phê</li>
+                    <li>Trà xanh</li>
+                    <li>Nước ép trái cây</li>
+                    <li>Smoothie</li>
+                </ul>
+            </aside>
+        </div>
+        
+        <section id="gallery-section" class="section-header">
+            <h2>📸 Bộ Sưu Tập: 6 Hình Ảnh Tuyệt Đẹp</h2>
+            <p>Lưu ý: Các hình ảnh chẵn có **bán kính viền hình tròn** nhờ bộ chọn **nth-child**.</p>
+        </section>
+
+        <div id="gallery">
+            <img src="https://picsum.photos/id/237/400/300" alt="Ly trà xanh đá" title="Trà xanh" loading="lazy">
+            <img src="https://picsum.photos/id/250/400/300" alt="Ly nước cam tươi" title="Nước cam" loading="lazy">
+            <img src="https://picsum.photos/id/1025/400/300" alt="Cốc sô cô la nóng" title="Sô cô la nóng" loading="lazy">
+            <img src="https://picsum.photos/id/1043/400/300" alt="Ly cocktail màu hồng" title="Cocktail" loading="lazy">
+            <img src="https://picsum.photos/id/33/400/300" alt="Ly sữa lắc" title="Sữa lắc" loading="lazy">
+            <img src="https://picsum.photos/id/21/400/300" alt="Bình nước detox" title="Nước detox" loading="lazy">
+        </div>
+        
+        <section id="contact-section" class="section-header">
+            <h2>📞 Liên Hệ Với Chúng Tôi</h2>
+        </section>
+
+        <div id="contact">
+            <p>Chúng tôi luôn sẵn lòng lắng nghe ý kiến đóng góp và thắc mắc của bạn.</p>
+            
+            <form action="#" method="POST">
+                <label for="name">Tên của bạn:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                
+                <label for="message">Nội dung:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br>
+                
+                <input type="submit" value="Gửi Tin Nhắn">
+            </form>
+
+            <img src="https://picsum.photos/id/431/500/350" alt="Một ly trà thảo mộc thư giãn" title="Trà thảo mộc" loading="lazy" style="margin-top: 30px;">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Thế Giới Đồ Uống. Mọi quyền được bảo lưu.</p>
+    </footer>
+</body>
+</html>
